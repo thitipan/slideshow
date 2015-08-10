@@ -13,7 +13,7 @@ function rescale() {
 		$(this).width(nw);
 	});
 }
-$('.diy-slideshow img').load(function() {
+$(window).load(function() {
 	$(window).bind('resize', rescale);
 	rescale();
 });
