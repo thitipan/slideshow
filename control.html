@@ -12,11 +12,11 @@
 		var socket = io();
 		var page = 0;
 		
-		$('prev').click(function() {
+		$('#prev').click(function() {
 			socket.emit('navigate', --page);
 			return;
 		});
-		$('next').click(function() {
+		$('#next').click(function() {
 			socket.emit('navigate', ++page);
 			return;
 		});
