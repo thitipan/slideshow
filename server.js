@@ -13,8 +13,11 @@ app.get('/control', function (req, res) {
   res.sendFile(__dirname + '/control.html');
 });
 
+var currentPage = 0;
 io.on('connection', function (socket) {
+  socket.emit('navigate', currentPage);
   socket.on('navigate', function (page) {
-    io.emit('navigate', page);
+    currentPage = page;
+    socket.broadcast.emit('navigate', page);
   });
 });
