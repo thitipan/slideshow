@@ -56,8 +56,10 @@
 						ratio = $(window).width() / $(this).width();	
 					else
 						ratio = $(window).height() / $(this).height();	
-					$(this).height($(this).height() * ratio);
-					$(this).width($(this).width() * ratio);	
+					var nh = $(this).height() * ratio;
+					var nw = $(this).width() * ratio;
+					$(this).height(nh);
+					$(this).width(nw);
 				});
 			}
 			$('.diy-slideshow img').load(function() {
