@@ -42,7 +42,7 @@
 			var socket = io();
 		
 			socket.on('navigate', function(page) {
-				$item = $('.diy-slideshow figure');
+				$item = $('.diy-slideshow img');
 				$item.removeClass('show');
 				$item.eq(Number(page) % $item.length).addClass('show');
 			});
