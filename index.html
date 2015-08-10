@@ -44,7 +44,7 @@
 			socket.on('navigate', function(page) {
 				$item = $('.diy-slideshow img');
 				$item.removeClass('show');
-				$item.eq(Number(page) % $item.length).addClass('show');
+				$item.eq(page % $item.length).addClass('show');
 			});
 			
 			function rescale() { 
