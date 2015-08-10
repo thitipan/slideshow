@@ -1,17 +1,11 @@
+var port = process.env.PORT || 8080; 
+
 var app = require('express')();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
-var port = process.env.PORT || 8080; 
+app.use(express.static('public'));
 server.listen(port);
-
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html'); 
-});
-
-app.get('/control', function (req, res) {
-  res.sendFile(__dirname + '/control.html');
-});
 
 var currentPage = 0;
 io.on('connection', function (socket) {
