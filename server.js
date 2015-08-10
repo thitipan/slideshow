@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/control', function (req, res) {
-  res.sendFile(__dirname + '/control.html'); 
+  res.sendFile(__dirname + '/control.html');  
 });
 
 io.on('connection', function (socket) {
