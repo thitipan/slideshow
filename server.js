@@ -4,7 +4,7 @@ var app = require('express')();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 server.listen(port);
 
 var currentPage = 0;
